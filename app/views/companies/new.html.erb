@@ -1,6 +1,21 @@
 <h1>New company</h1>
 
 <%= form_with scope: :company, url: companies_path, local: true do |form| %>
+
+  <% if @company.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:
+        <ul>
+        <% @company.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+        <% end %>
+        </ul>
+      </h2>
+    </div>
+  <% end %>
+
+
   <p>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
@@ -15,3 +30,5 @@
     <%= form.submit %>
   </p>
 <% end %>
+
+<%= link_to "Companies list", companies_path %>
