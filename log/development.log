@@ -1,0 +1,420 @@
+Started GET "/company/new" for 127.0.0.1 at 2018-04-16 22:57:00 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/company/new"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-04-16 22:57:05 +0300
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 514ms (Views: 407.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 22:58:27 +0300
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 22.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 22:58:33 +0300
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 71ms (Views: 66.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCompanies (20180416201903)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180416201903"]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-16 20:19:33.245448"], ["updated_at", "2018-04-16 20:19:33.245448"]]
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-16 23:25:57 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/articles/new"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/companies/new" for 127.0.0.1 at 2018-04-16 23:26:05 +0300
+Processing by CompaniesController#new as HTML
+  Rendering companies/new.html.erb within layouts/application
+  Rendered companies/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 39ms (Views: 37.7ms)
+
+
+Started GET "/companies/new" for 127.0.0.1 at 2018-04-16 23:26:22 +0300
+Processing by CompaniesController#new as HTML
+  Rendering companies/new.html.erb within layouts/application
+  Rendered companies/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 21ms (Views: 19.5ms)
+
+
+Started GET "/companies/new" for 127.0.0.1 at 2018-04-16 23:26:26 +0300
+Processing by CompaniesController#new as HTML
+  Rendering companies/new.html.erb within layouts/application
+  Rendered companies/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 36ms (Views: 32.3ms)
+
+
+Started POST "/companies" for 127.0.0.1 at 2018-04-16 23:26:56 +0300
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kBey/WcvSSaYpH7EIMH4wIJPFanbVhy6/1MjufRrSRtXZOyWArqqVMRhtT0HYKKOdLKGpmCO8hXO2ABZukWTcA==", "company"=>{"name"=>"first comp", "description"=>"This is the first test company"}, "commit"=>"Save Company"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "companies" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "first comp"], ["description", "This is the first test company"], ["created_at", "2018-04-16 20:26:56.324958"], ["updated_at", "2018-04-16 20:26:56.324958"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/companies/1
+Completed 302 Found in 71ms (ActiveRecord: 14.7ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2018-04-16 23:26:56 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 59ms (Views: 40.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2018-04-16 23:55:01 +0300
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 27ms (Views: 24.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2018-04-16 23:59:07 +0300
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 99ms (Views: 92.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2018-04-16 23:59:43 +0300
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 35ms (Views: 30.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2018-04-17 00:00:19 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (1.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 95ms (Views: 85.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2018-04-17 00:01:14 +0300
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.9ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 91ms (Views: 86.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/new" for 127.0.0.1 at 2018-04-17 00:01:15 +0300
+Processing by CompaniesController#new as HTML
+  Rendering companies/new.html.erb within layouts/application
+  Rendered companies/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 90ms (Views: 85.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies/new" for 127.0.0.1 at 2018-04-17 00:02:09 +0300
+Processing by CompaniesController#new as HTML
+  Rendering companies/new.html.erb within layouts/application
+  Rendered companies/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 37ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2018-04-17 00:02:10 +0300
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 67ms (Views: 61.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2018-04-17 00:03:07 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 65ms (Views: 58.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2018-04-17 00:03:09 +0300
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 80ms (Views: 75.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2018-04-17 00:14:08 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 22ms (Views: 14.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2018-04-17 00:14:09 +0300
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 43ms (Views: 36.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/companies/new" for 127.0.0.1 at 2018-04-17 00:14:10 +0300
+Processing by CompaniesController#new as HTML
+  Rendering companies/new.html.erb within layouts/application
+  Rendered companies/new.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <h1>New company</h1>
+    2: 
+    3: <%= form_with scope: :company, url: companies_path, local: true do |form| %>
+    4:   <% if @company.errors.any? %>
+    5:     <div id="error_explanation">
+    6:       <h2>
+    7:         <%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:
+  
+app/views/companies/new.html.erb:4:in `block in _app_views_companies_new_html_erb___2570297331033730448_69935200675140'
+app/views/companies/new.html.erb:3:in `_app_views_companies_new_html_erb___2570297331033730448_69935200675140'
+Started GET "/companies/new" for 127.0.0.1 at 2018-04-17 00:15:36 +0300
+Processing by CompaniesController#new as HTML
+  Rendering companies/new.html.erb within layouts/application
+  Rendered companies/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 26ms (Views: 17.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/companies" for 127.0.0.1 at 2018-04-17 00:15:38 +0300
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uewdtegnGeJFAeRyfLhT3vmqH78kZs8/iAXaC4jo0dx+n0PejbL6kBnEL4tbGQmQD1eMsJ++IZC5jvnrxsYLtw==", "company"=>{"name"=>"", "description"=>""}, "commit"=>"Save Company"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[31mrollback transaction[0m
+  Rendering companies/new.html.erb within layouts/application
+  Rendered companies/new.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 82ms (Views: 65.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2018-04-17 22:39:36 +0300
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 40ms (Views: 36.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2018-04-17 22:39:40 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (207.5ms)
+Completed 500 Internal Server Error in 214ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `company' for #<#<Class:0x00000003284558>:0x007f361e47fb98>
+Did you mean?  @company):
+     9: </p>
+    10: 
+    11: <%= link_to "Companies list", companies_path %>
+    12: <%= link_to "Edit",  edit_company_path(company)%>
+  
+app/views/companies/show.html.erb:12:in `_app_views_companies_show_html_erb__1311409320549228420_69935206499040'
+Started GET "/companies/1" for 127.0.0.1 at 2018-04-17 22:40:37 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2018-04-17 22:40:39 +0300
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 73ms (Views: 67.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2018-04-17 22:40:40 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 64ms (Views: 56.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/companies/1/edit" for 127.0.0.1 at 2018-04-17 22:40:41 +0300
+Processing by CompaniesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/edit.html.erb within layouts/application
+  Rendered companies/_form.html.erb (4.4ms)
+  Rendered companies/edit.html.erb within layouts/application (10.2ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/home/denis/ROR/HR_CRM/app/views/companies/_form.html.erb:3: syntax error, unexpected '<'
+  <% if @company.errors.any? );@o
+   ^
+/home/denis/ROR/HR_CRM/app/views/companies/_form.html.erb:3: syntax error, unexpected tIVAR, expecting keyword_end
+  <% if @company.errors.any? );@output_buffer.
+                ^
+/home/denis/ROR/HR_CRM/app/views/companies/_form.html.erb:31: syntax error, unexpected keyword_end, expecting end-of-input
+'.freeze; end ;
+             ^):
+  
+app/views/companies/_form.html.erb:3: syntax error, unexpected '<'
+app/views/companies/_form.html.erb:3: syntax error, unexpected tIVAR, expecting keyword_end
+app/views/companies/_form.html.erb:31: syntax error, unexpected keyword_end, expecting end-of-input
+app/views/companies/edit.html.erb:3:in `_app_views_companies_edit_html_erb___281964516684016818_69935197628140'
+Started GET "/companies/1/edit" for 127.0.0.1 at 2018-04-17 22:41:51 +0300
+Processing by CompaniesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/edit.html.erb within layouts/application
+  Rendered companies/_form.html.erb (16.6ms)
+  Rendered companies/edit.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 82ms (Views: 76.1ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/companies/1" for 127.0.0.1 at 2018-04-17 22:42:16 +0300
+Processing by CompaniesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NVDzu4OYktdO22bemjuTDid2rgLmzmpUebiqf0Snj6TyI63Q5g1xpRIerSe9mslA0Ys9DV0WhPtIM4mfColVzw==", "company"=>{"name"=>"first comp", "description"=>"updated description"}, "commit"=>"Update Company", "id"=>"1"}
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "companies" SET "description" = ?, "updated_at" = ? WHERE "companies"."id" = ?[0m  [["description", "updated description"], ["updated_at", "2018-04-17 19:42:16.817652"], ["id", 1]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/companies/1
+Completed 302 Found in 39ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2018-04-17 22:42:16 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 27ms (Views: 23.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2018-04-17 22:42:19 +0300
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 57ms (Views: 52.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/companies/1/edit" for 127.0.0.1 at 2018-04-17 22:42:23 +0300
+Processing by CompaniesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/edit.html.erb within layouts/application
+  Rendered companies/_form.html.erb (6.2ms)
+  Rendered companies/edit.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 68ms (Views: 62.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2018-04-17 22:42:25 +0300
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/companies/new" for 127.0.0.1 at 2018-04-17 22:42:26 +0300
+Processing by CompaniesController#new as HTML
+  Rendering companies/new.html.erb within layouts/application
+  Rendered companies/_form.html.erb (2.7ms)
+  Rendered companies/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2018-04-17 22:42:27 +0300
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.9ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 90ms (Views: 83.7ms | ActiveRecord: 0.9ms)
+
+

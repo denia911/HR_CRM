@@ -4,7 +4,7 @@
   <tr>
     <td>Name</td>
     <td>Description</td>
-    <td></td>
+    <td colspan="2"></td>
   </tr>
 
   <% @companies.each do |company| %>
@@ -12,6 +12,7 @@
     <td><%= company.name %></td>
     <td><%= company.description %></td>
     <td><%= link_to "Show", company_path(company) %></td>
+    <td><%= link_to "Edit",  edit_company_path(company)%></td>
   </tr>
 </table>
 <% end %>
