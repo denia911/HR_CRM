@@ -418,3 +418,177 @@ Processing by CompaniesController#index as HTML
 Completed 200 OK in 90ms (Views: 83.7ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/companies" for 127.0.0.1 at 2018-04-17 23:04:12 +0300
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 58ms (Views: 49.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2018-04-17 23:04:14 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 31ms (Views: 26.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2018-04-17 23:04:16 +0300
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (6.8ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 77ms (Views: 61.6ms | ActiveRecord: 6.8ms)
+
+
+Started DELETE "/companies/1" for 127.0.0.1 at 2018-04-17 23:04:20 +0300
+Processing by CompaniesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"e/d5tEAPjsGj5J4jqwJ2KnANdwpgbCpKLYX2rhlI1du8hCffJZpts/8hVdqMoyxkhvDkBdu0xOUcDtVOV2YPsA==", "id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for nil:NilClass):
+  
+app/controllers/companies_controller.rb:38:in `destroy'
+Started GET "/companies" for 127.0.0.1 at 2018-04-17 23:05:00 +0300
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 29ms (Views: 26.2ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/companies/1" for 127.0.0.1 at 2018-04-17 23:05:03 +0300
+Processing by CompaniesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"m02EZ3rFVsoTAYSt7fT/De9ZDZPEnJEZ+q7mg4YapqZcPtoMH1C1uE/ET1TKVaVDGaSenH9Ef7bLJcVjyDR8zQ==", "id"=>"1"}
+  [1m[36mCompany Load (1.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = ?[0m  [["id", 1]]
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/companies
+Completed 302 Found in 30ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2018-04-17 23:05:03 +0300
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/companies/new" for 127.0.0.1 at 2018-04-17 23:05:08 +0300
+Processing by CompaniesController#new as HTML
+  Rendering companies/new.html.erb within layouts/application
+  Rendered companies/_form.html.erb (6.2ms)
+  Rendered companies/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 42ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/companies" for 127.0.0.1 at 2018-04-17 23:05:46 +0300
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WV6e2U6M2C0L4soaJPDPnIWzoq4s4ndqxmW446sOqHml7qBOblqT1SgBB39FcMAMQieFzdEgbfK9xylFBW/p7A==", "company"=>{"name"=>"New company", "description"=>"New description"}, "commit"=>"Create Company"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (10.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "New company"], ["description", "New description"], ["created_at", "2018-04-17 20:05:46.631986"], ["updated_at", "2018-04-17 20:05:46.631986"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/companies/2
+Completed 302 Found in 44ms (ActiveRecord: 15.8ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2018-04-17 23:05:46 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 61ms (Views: 56.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2018-04-17 23:06:48 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (286.8ms)
+Completed 500 Internal Server Error in 300ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `company' for #<#<Class:0x007f361dc274f0>:0x007f36202305e8>
+Did you mean?  @company):
+     9: </p>
+    10: 
+    11: <%= link_to "Edit",  edit_company_path(@company) %><br>
+    12: <%= link_to "Delete", company_path(company), method: :delete, data: { confirm: 'Are ypu shyre?'} %><br>
+    13: <%= link_to "Companies list", companies_path %>
+  
+app/views/companies/show.html.erb:12:in `_app_views_companies_show_html_erb__1311409320549228420_69935222065120'
+Started GET "/companies/new" for 127.0.0.1 at 2018-04-17 23:07:09 +0300
+Processing by CompaniesController#new as HTML
+  Rendering companies/new.html.erb within layouts/application
+  Rendered companies/_form.html.erb (18.6ms)
+  Rendered companies/new.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 115ms (Views: 103.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2018-04-17 23:07:10 +0300
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (1.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 97ms (Views: 90.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2018-04-17 23:07:12 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (1.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 94ms (Views: 87.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2018-04-17 23:07:16 +0300
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 132ms (Views: 127.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2018-04-17 23:08:47 +0300
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (1.0ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 112ms (Views: 107.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2018-04-17 23:08:52 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 70ms (Views: 60.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2018-04-17 23:08:55 +0300
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 100ms (Views: 93.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2018-04-17 23:09:07 +0300
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.2ms)
+
+

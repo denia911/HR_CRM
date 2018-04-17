@@ -9,10 +9,10 @@
 
   <% @companies.each do |company| %>
   <tr>
-    <td><%= company.name %></td>
+    <td><%= link_to "#{company.name}", company_path(company) %></td>
     <td><%= company.description %></td>
-    <td><%= link_to "Show", company_path(company) %></td>
     <td><%= link_to "Edit",  edit_company_path(company)%></td>
+    <td><%= link_to "Delete", company_path(company), method: :delete, data: { confirm: 'Are ypu shyre?'} %></td>
   </tr>
 </table>
 <% end %>

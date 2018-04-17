@@ -8,5 +8,6 @@
   <%= @company.description %>
 </p>
 
+<%= link_to "Edit",  edit_company_path(@company) %><br>
+<%= link_to "Delete", company_path(@company), method: :delete, data: { confirm: 'Are ypu shyre?'} %><br>
 <%= link_to "Companies list", companies_path %>
-<%= link_to "Edit",  edit_company_path(@company)%>
