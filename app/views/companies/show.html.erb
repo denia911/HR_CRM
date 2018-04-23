@@ -1,13 +1,25 @@
-<p>
-  <strong>Name:</strong>
-  <%= @company.name %>
-</p>
+<h1><%= @company.name %> company`s page</h1>
 
 <p>
-  <strong>Description:</strong>
-  <%= @company.description %>
+  <% if @company.description.length > 0 %>
+    <strong>Description:</strong>
+    <%= @company.description %><br>
+  <% else %>
+    <br>
+  <% end %>
 </p>
 
-<%= link_to "Edit",  edit_company_path(@company) %><br>
-<%= link_to "Delete", company_path(@company), method: :delete, data: { confirm: 'Are ypu shyre?'} %><br>
-<%= link_to "Companies list", companies_path %>
+<%= link_to "Edit company information",  edit_company_path(@company) %><br>
+<%= link_to "Delete company with all workers", company_path(@company), method: :delete, data: { confirm: 'Are ypu shyre?'} %><br>
+
+<% if @company.workers.count > 0 %>
+  <h2>Workers in this company</h2>
+<% else %>
+  <h2>In this company no workers yet</h2>
+<% end %>
+
+<%= render @company.workers %>
+
+<%= link_to "Add new worker", new_company_worker_path(@company) %><br>
+
+<%= link_to "All Companies list", companies_path %>

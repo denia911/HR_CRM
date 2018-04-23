@@ -1,0 +1,4 @@
+<h1>Choose company where you need to send worker</h1>
+<% @companies.each do |company| %>
+  <%= link_to "#{company.name}", workers_send_to_company_path(company_id: @worker.company_id, worker_id: @worker.id, :new_id => company.id) %>
+<% end %>

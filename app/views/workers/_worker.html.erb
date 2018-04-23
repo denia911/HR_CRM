@@ -1,0 +1,14 @@
+<p>
+  <strong>Name:</strong>
+  <%= worker.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= worker.description %>
+</p>
+
+<p>
+  <%= link_to "Delete worker", [worker.company, worker], method: :delete, data: { confirm: "Are you sure?"} %><br>
+  <%= link_to "Send worker to another company", company_worker_another_company_list_path(worker.company_id, worker.id) %>
+</p>
