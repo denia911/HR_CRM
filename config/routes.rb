@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'home/home'
 
   get 'workers/another_company_list'
@@ -7,12 +8,10 @@ Rails.application.routes.draw do
 
   resources :companies do
     resources :workers do
-      get 'another_company_list' do
-        get 'send_to_company'
-      end
+      get 'another_company_list'
     end
   end
 
-  root 'home#home'
+  root 'companies#index'
 
 end
