@@ -1,14 +1,17 @@
 class CompaniesController < ApplicationController
   def index
-    @companies = Company.all
+    @user = current_user
+    @companies = @user.companies.all
   end
 
   def show
-    @company = Company.find(params[:id])
+    @user = current_user
+    @company = @user.companies.find(params[:id])
   end
 
   def new
-    @company = Company.new
+    @user = current_user
+    @company = @user.companies.new
   end
 
   def edit
@@ -16,9 +19,10 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    @company = Company.new(company_params)
+    @user = current_user
+    @company = @user.companies.new(company_params)
     if @company.save
-    redirect_to @company
+      redirect_to @company
     else
       render 'new'
     end
