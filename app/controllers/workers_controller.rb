@@ -28,7 +28,7 @@ class WorkersController < ApplicationController
   def another_company_list
     workers
     @worker = @workers.find(params[:worker_id])
-    @companies = Company.where.not(id: params[:company_id])
+    @companies = @user.companies.where.not(id: params[:company_id])
   end
 
   private

@@ -15521,3 +15521,265 @@ Processing by CompaniesController#index as HTML
 Completed 200 OK in 109ms (Views: 92.9ms | ActiveRecord: 2.7ms)
 
 
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-05-02 00:28:02 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dY1MuFb9JJVlQ2FaXRdl5W/mKJDG4Iz4veh28zFFzXlyJlzxOZTXOylmKCQqSo4tJTx9hCdOdVaCnrVF/0czjQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-02 00:28:02 +0300
+Processing by CompaniesController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-05-02 00:28:02 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 32ms (Views: 29.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-05-02 00:28:07 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5RcUFCLCoVozgPFsXo9e2/1wBwwN8zQv5WVbmWbzuNhoiDx/DzBRgltqecYJgv9WB49VFOk0mR3qgSaJD9Ag9A==", "user"=>{"email"=>"denisosa9111@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "denisosa9111@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-05-01 21:28:07.353856"], ["sign_in_count", 2], ["updated_at", "2018-05-01 21:28:07.354449"], ["id", 2]]
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 204ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-02 00:28:07 +0300
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering companies/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies" WHERE "companies"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered companies/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 33ms (Views: 28.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/companies/new" for 127.0.0.1 at 2018-05-02 00:28:09 +0300
+Processing by CompaniesController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering companies/new.html.erb within layouts/application
+  Rendered companies/_form.html.erb (24.8ms)
+  Rendered companies/new.html.erb within layouts/application (29.6ms)
+Completed 200 OK in 80ms (Views: 65.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/companies" for 127.0.0.1 at 2018-05-02 00:28:13 +0300
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PbHjicRYxIyo4VLxsPCy+D503hcWfGbfmjNgxX7bcGqNWAEQgUvCxoQVA0SdQH8l2eXSQpjwVBbG8lablOQkBQ==", "company"=>{"name"=>"sfdgfgn", "description"=>"sdvfbgb"}, "commit"=>"Create Company"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "companies" ("name", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "sfdgfgn"], ["description", "sdvfbgb"], ["user_id", 2], ["created_at", "2018-05-01 21:28:13.369370"], ["updated_at", "2018-05-01 21:28:13.369370"]]
+  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/companies/7
+Completed 302 Found in 47ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/companies/7" for 127.0.0.1 at 2018-05-02 00:28:13 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."user_id" = ? AND "companies"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 7], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "workers" WHERE "workers"."company_id" = ?[0m  [["company_id", 7]]
+  [1m[36mWorker Load (1.0ms)[0m  [1m[34mSELECT "workers".* FROM "workers" WHERE "workers"."company_id" = ?[0m  [["company_id", 7]]
+  Rendered collection of templates [0 times] (0.1ms)
+  Rendered companies/show.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 93ms (Views: 70.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/companies/7/workers/new" for 127.0.0.1 at 2018-05-02 00:28:15 +0300
+Processing by WorkersController#new as HTML
+  Parameters: {"company_id"=>"7"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."user_id" = ? AND "companies"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 7], ["LIMIT", 1]]
+  Rendering workers/new.html.erb within layouts/application
+  Rendered workers/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 89ms (Views: 67.9ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/companies/7/workers" for 127.0.0.1 at 2018-05-02 00:28:18 +0300
+Processing by WorkersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WVaC4fBDwJ/MqQAtQevK5JHJiWKPCBEGfnBXeOu2fgi6egLgd5dghXfQEJUkNYw9DfMSIXvexkmIGUdIr5OVaA==", "worker"=>{"name"=>"dwferbg", "description"=>"qdwfvfb"}, "commit"=>"Create Worker", "company_id"=>"7"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (1.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."user_id" = ? AND "companies"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO "workers" ("name", "description", "company_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "dwferbg"], ["description", "qdwfvfb"], ["company_id", 7], ["created_at", "2018-05-01 21:28:18.826468"], ["updated_at", "2018-05-01 21:28:18.826468"]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/companies/7
+Completed 302 Found in 61ms (ActiveRecord: 13.2ms)
+
+
+Started GET "/companies/7" for 127.0.0.1 at 2018-05-02 00:28:18 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (1.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."user_id" = ? AND "companies"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 7], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "workers" WHERE "workers"."company_id" = ?[0m  [["company_id", 7]]
+  [1m[36mWorker Load (0.3ms)[0m  [1m[34mSELECT "workers".* FROM "workers" WHERE "workers"."company_id" = ?[0m  [["company_id", 7]]
+  Rendered collection of workers/_worker.html.erb [1 times] (2.4ms)
+  Rendered companies/show.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 73ms (Views: 50.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/companies/7/workers/6/another_company_list" for 127.0.0.1 at 2018-05-02 00:28:20 +0300
+Processing by WorkersController#another_company_list as HTML
+  Parameters: {"company_id"=>"7", "worker_id"=>"6"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (1.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."user_id" = ? AND "companies"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 7], ["LIMIT", 1]]
+  [1m[36mWorker Load (0.9ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."company_id" = ? AND "workers"."id" = ? LIMIT ?[0m  [["company_id", 7], ["id", 6], ["LIMIT", 1]]
+  Rendering workers/another_company_list.html.erb within layouts/application
+  [1m[36mCompany Load (1.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE ("companies"."id" != ?)[0m  [["id", 7]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "workers" WHERE "workers"."company_id" = ?[0m  [["company_id", 4]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "workers" WHERE "workers"."company_id" = ?[0m  [["company_id", 5]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "workers" WHERE "workers"."company_id" = ?[0m  [["company_id", 6]]
+  Rendered workers/another_company_list.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 116ms (Views: 84.2ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/companies/7" for 127.0.0.1 at 2018-05-02 00:28:38 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."user_id" = ? AND "companies"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 7], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "workers" WHERE "workers"."company_id" = ?[0m  [["company_id", 7]]
+  [1m[36mWorker Load (0.2ms)[0m  [1m[34mSELECT "workers".* FROM "workers" WHERE "workers"."company_id" = ?[0m  [["company_id", 7]]
+  Rendered collection of workers/_worker.html.erb [1 times] (1.0ms)
+  Rendered companies/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 66ms (Views: 60.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-02 00:28:42 +0300
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering companies/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies" WHERE "companies"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered companies/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 68ms (Views: 63.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/companies/7" for 127.0.0.1 at 2018-05-02 00:28:45 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."user_id" = ? AND "companies"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 7], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "workers" WHERE "workers"."company_id" = ?[0m  [["company_id", 7]]
+  [1m[36mWorker Load (0.6ms)[0m  [1m[34mSELECT "workers".* FROM "workers" WHERE "workers"."company_id" = ?[0m  [["company_id", 7]]
+  Rendered collection of workers/_worker.html.erb [1 times] (1.2ms)
+  Rendered companies/show.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 72ms (Views: 65.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/companies/7" for 127.0.0.1 at 2018-05-02 00:29:58 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."user_id" = ? AND "companies"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 7], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "workers" WHERE "workers"."company_id" = ?[0m  [["company_id", 7]]
+  [1m[36mWorker Load (0.1ms)[0m  [1m[34mSELECT "workers".* FROM "workers" WHERE "workers"."company_id" = ?[0m  [["company_id", 7]]
+  Rendered collection of workers/_worker.html.erb [1 times] (2.3ms)
+  Rendered companies/show.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 64ms (Views: 38.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/companies/7" for 127.0.0.1 at 2018-05-02 00:30:01 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."user_id" = ? AND "companies"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 7], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "workers" WHERE "workers"."company_id" = ?[0m  [["company_id", 7]]
+  [1m[36mWorker Load (0.3ms)[0m  [1m[34mSELECT "workers".* FROM "workers" WHERE "workers"."company_id" = ?[0m  [["company_id", 7]]
+  Rendered collection of workers/_worker.html.erb [1 times] (1.6ms)
+  Rendered companies/show.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 44ms (Views: 36.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/companies/7/workers/6/another_company_list" for 127.0.0.1 at 2018-05-02 00:30:02 +0300
+Processing by WorkersController#another_company_list as HTML
+  Parameters: {"company_id"=>"7", "worker_id"=>"6"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."user_id" = ? AND "companies"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 7], ["LIMIT", 1]]
+  [1m[36mWorker Load (0.4ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."company_id" = ? AND "workers"."id" = ? LIMIT ?[0m  [["company_id", 7], ["id", 6], ["LIMIT", 1]]
+  Rendering workers/another_company_list.html.erb within layouts/application
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = ? AND ("companies"."id" != ?)[0m  [["user_id", 2], ["id", 7]]
+  Rendered workers/another_company_list.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 53ms (Views: 37.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/companies/7" for 127.0.0.1 at 2018-05-02 00:30:43 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."user_id" = ? AND "companies"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 7], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "workers" WHERE "workers"."company_id" = ?[0m  [["company_id", 7]]
+  [1m[36mWorker Load (0.2ms)[0m  [1m[34mSELECT "workers".* FROM "workers" WHERE "workers"."company_id" = ?[0m  [["company_id", 7]]
+  Rendered collection of workers/_worker.html.erb [1 times] (0.7ms)
+  Rendered companies/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 41ms (Views: 36.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/companies/7" for 127.0.0.1 at 2018-05-02 00:33:28 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."user_id" = ? AND "companies"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 7], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "workers" WHERE "workers"."company_id" = ?[0m  [["company_id", 7]]
+  [1m[36mWorker Load (0.2ms)[0m  [1m[34mSELECT "workers".* FROM "workers" WHERE "workers"."company_id" = ?[0m  [["company_id", 7]]
+  Rendered collection of workers/_worker.html.erb [1 times] (3.2ms)
+  Rendered companies/show.html.erb within layouts/application (9.1ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `companies' for nil:NilClass):
+    10: 
+    11: <p>
+    12:   <%= link_to "Delete worker", [worker.company, worker], method: :delete, data: { confirm: "Are you sure?"} %><br>
+    13:   <% if @user.companies.count > 1 %>
+    14:     <%= link_to "Send worker to another company", company_worker_another_company_list_path(worker.company_id, worker.id) %>
+    15:   <% end %>
+    16: </p>
+  
+app/views/workers/_worker.html.erb:13:in `_app_views_workers__worker_html_erb___4267544259125623192_70282710750760'
+app/views/companies/show.html.erb:22:in `_app_views_companies_show_html_erb__1588274562272812513_70282710943260'
+Started GET "/companies/7" for 127.0.0.1 at 2018-05-02 00:35:07 +0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."user_id" = ? AND "companies"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 7], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "workers" WHERE "workers"."company_id" = ?[0m  [["company_id", 7]]
+  [1m[36mWorker Load (0.9ms)[0m  [1m[34mSELECT "workers".* FROM "workers" WHERE "workers"."company_id" = ?[0m  [["company_id", 7]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies" WHERE "companies"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered collection of workers/_worker.html.erb [1 times] (10.4ms)
+  Rendered companies/show.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 119ms (Views: 97.3ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-02 00:35:16 +0300
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering companies/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies" WHERE "companies"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mCompany Load (1.0ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered companies/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 114ms (Views: 97.3ms | ActiveRecord: 2.8ms)
+
+
