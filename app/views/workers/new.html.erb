@@ -1,6 +1,6 @@
 <div class="center jumbotron">
   <h1>New worker</h1>
-<%= form_with model: [ @company, @company.workers.build ], local: true do |form| %>
+<%= form_with model: [ @company, @workers.build ], local: true do |form| %>
 
   <p>
     <%= form.label :name %><br>

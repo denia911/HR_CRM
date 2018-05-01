@@ -1,26 +1,22 @@
 class CompaniesController < ApplicationController
   def index
-    @user = current_user
-    @companies = @user.companies.all
+    @companies = companies.all
   end
 
   def show
-    @user = current_user
-    @company = @user.companies.find(params[:id])
+    @company = companies.find(params[:id])
   end
 
   def new
-    @user = current_user
-    @company = @user.companies.new
+    @company = companies.new
   end
 
   def edit
-    @company = Company.find(params[:id])
+    @company = companies.find(params[:id])
   end
 
   def create
-    @user = current_user
-    @company = @user.companies.new(company_params)
+    @company = companies.new(company_params)
     if @company.save
       redirect_to @company
     else
@@ -29,7 +25,7 @@ class CompaniesController < ApplicationController
   end
 
   def update
-    @company = Company.find(params[:id])
+    @company = companies.find(params[:id])
 
     if @company.update(company_params)
       redirect_to @company
@@ -39,14 +35,19 @@ class CompaniesController < ApplicationController
   end
 
   def destroy
-    @company = Company.find(params[:id])
+    @company = companies.find(params[:id])
     @company.destroy
 
     redirect_to companies_path
   end
 
   private
+
   def company_params
     params.require(:company).permit(:name, :description)
+  end
+
+  def companies
+    @companies = current_user.companies
   end
 end
