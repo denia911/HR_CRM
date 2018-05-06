@@ -1,5 +1,12 @@
 <div class="center jumbotron">
-<h1>All companies list</h1>
+  <h1>All companies list</h1>
+
+  <p>Sort companies
+  <select onchange="if (this.value) window.location.href = this.value">
+    <option value= <%= root_path %>>name</option>
+    <option value= <%= company_path(@companies.last) %>>nova-wings</option>
+  </select>
+  </p>
 
   <% if @companies.count > 0 %>
     <table>
