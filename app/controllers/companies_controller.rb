@@ -48,7 +48,6 @@ class CompaniesController < ApplicationController
   end
 
   def companies
-    @user = current_user
-    @companies = @user.companies
+    @companies = current_user.companies
   end
 end
