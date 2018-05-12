@@ -18,7 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'devise' # , '~> 4.4', '>= 4.4.3'
+gem 'devise_token_auth', '~> 0.1.43'
 
 gem 'rubocop', require: false
 
@@ -56,11 +56,13 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
   gem 'factory_bot_rails', '~> 4.8', '>= 4.8.2'
+  gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+
+gem 'active_model_serializers', '~> 0.10.7'

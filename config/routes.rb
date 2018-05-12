@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users
-  get 'home/home'
+  mount_devise_token_auth_for 'User', at: 'api/v1'
+  namespace 'api' do
+    namespace 'v1' do
+      resources :companies do
+        get 'workers/all'
+        put 'workers/create'
+      end
 
-  get 'workers/another_company_list'
-
-  get 'workers/send_to_company'
-
-  resources :companies do
-    resources :workers do
-      get 'another_company_list'
+      resources :workers do
+        get 'another_company_list'
+        patch 'send_to_company'
+      end
     end
   end
-
-  root 'companies#index'
 end

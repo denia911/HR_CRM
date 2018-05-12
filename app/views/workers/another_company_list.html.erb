@@ -1,9 +1,0 @@
-<div class="center jumbotron">
-  <h1>Choose company where you need to send worker</h1>
-  <% @companies.each do |company| %>
-    In  <%= link_to "#{company.name}", workers_send_to_company_path(company_id: @worker.company_id, worker_id: @worker.id, :new_id => company.id) %> worked
-    <%= company.workers.count %> workers <br>
-  <% end %>
-</div>
-<%= link_to "Back", company_path(@company) %><br>
-<%= link_to "Companies list", root_path %>
