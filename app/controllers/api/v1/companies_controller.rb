@@ -11,10 +11,6 @@ module Api
         render json: @company
       end
 
-      def new
-        @company = Company.new
-      end
-
       def edit
         @company = Company.find(params[:id])
         render json: @company

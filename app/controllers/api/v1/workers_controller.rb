@@ -1,19 +1,9 @@
 module Api
   module V1
     class WorkersController < ApplicationController
-      def index
-        @workers = Worker.all
-        render json: @workers.all
-      end
-
       def show
         worker
         render json: @worker
-      end
-
-      def new
-        workers
-        @worker = @workers.new
       end
 
       def create
