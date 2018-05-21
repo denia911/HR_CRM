@@ -1,5 +1,3 @@
-require 'faker'
-
 FactoryBot.define do
   factory :company do
     name { Faker::HarryPotter.character }
