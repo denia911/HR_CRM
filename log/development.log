@@ -26667,3 +26667,227 @@ Migrating to DeviseTokenAuthCreateUsers (20180512223839)
   [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "workers" ("name", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Miss Deshawn Mayer"], ["description", "Earum amet eius deserunt velit distinctio."], ["company_id", 5], ["created_at", "2018-05-21 21:31:33.545058"], ["updated_at", "2018-05-21 21:31:33.545058"]]
   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies"[0m
+Started GET "/api/v1/companies/2" for 127.0.0.1 at 2018-05-23 23:10:26 +0300
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CompaniesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (4.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered CompanySerializer with ActiveModelSerializers::Adapter::Attributes (0.4ms)
+Completed 200 OK in 28ms (Views: 7.1ms | ActiveRecord: 7.4ms)
+
+
+Started PATCH "/api/v1/companies/2?name=Updated%20company" for 127.0.0.1 at 2018-05-23 23:13:34 +0300
+Processing by Api::V1::CompaniesController#update as */*
+  Parameters: {"name"=>"Updated company", "id"=>"2"}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[33mUPDATE "companies" SET "name" = $1, "updated_at" = $2 WHERE "companies"."id" = $3[0m  [["name", "Updated company"], ["updated_at", "2018-05-23 20:13:34.514425"], ["id", 2]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered CompanySerializer with ActiveModelSerializers::Adapter::Attributes (0.8ms)
+Completed 200 OK in 20ms (Views: 6.7ms | ActiveRecord: 4.0ms)
+
+
+Started DELETE "/api/v1/companies/2" for 127.0.0.1 at 2018-05-23 23:13:56 +0300
+Processing by Api::V1::CompaniesController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWorker Load (0.9ms)[0m  [1m[34mSELECT "workers".* FROM "workers" WHERE "workers"."company_id" = $1[0m  [["company_id", 2]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "workers" WHERE "workers"."id" = $1[0m  [["id", 6]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "workers" WHERE "workers"."id" = $1[0m  [["id", 7]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "workers" WHERE "workers"."id" = $1[0m  [["id", 8]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "workers" WHERE "workers"."id" = $1[0m  [["id", 9]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "workers" WHERE "workers"."id" = $1[0m  [["id", 10]]
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = $1[0m  [["id", 2]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+No template found for Api::V1::CompaniesController#destroy, rendering head :no_content
+Completed 204 No Content in 63ms (ActiveRecord: 8.9ms)
+
+
+Started DELETE "/api/v1/companies" for 127.0.0.1 at 2018-05-23 23:13:59 +0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/api/v1/companies"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/companies" for 127.0.0.1 at 2018-05-23 23:14:10 +0300
+Processing by Api::V1::CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.79ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/workers" for 127.0.0.1 at 2018-05-23 23:17:54 +0300
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for Api::V1::WorkersController):
+  
+actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+bullet (5.7.5) lib/bullet/rack.rb:14:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/companies/2/workers" for 127.0.0.1 at 2018-05-23 23:18:39 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/companies/2/workers"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/companies/2/workers/all" for 127.0.0.1 at 2018-05-23 23:18:58 +0300
+Processing by Api::V1::WorkersController#all as */*
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 23ms (Views: 12.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/api/v1/companies/3/workers/all" for 127.0.0.1 at 2018-05-23 23:20:02 +0300
+Processing by Api::V1::WorkersController#all as */*
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWorker Load (0.5ms)[0m  [1m[34mSELECT "workers".* FROM "workers" WHERE "workers"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.83ms)
+Completed 200 OK in 40ms (Views: 20.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/v1/workers/11" for 127.0.0.1 at 2018-05-23 23:20:33 +0300
+Processing by Api::V1::WorkersController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mWorker Load (0.3ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers] Rendered WorkerSerializer with ActiveModelSerializers::Adapter::Attributes (0.4ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/workers/11/another_company_list" for 127.0.0.1 at 2018-05-23 23:27:28 +0300
+Processing by Api::V1::WorkersController#another_company_list as */*
+  Parameters: {"worker_id"=>"11"}
+  [1m[36mWorker Load (0.2ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/workers/11/another_company_list" for 127.0.0.1 at 2018-05-23 23:28:04 +0300
+Processing by Api::V1::WorkersController#another_company_list as */*
+  Parameters: {"worker_id"=>"11"}
+  [1m[36mWorker Load (0.3ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 7ms (Views: 3.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/workers/11/another_company_list" for 127.0.0.1 at 2018-05-23 23:28:14 +0300
+Processing by Api::V1::WorkersController#another_company_list as */*
+  Parameters: {"worker_id"=>"11"}
+  [1m[36mWorker Load (0.3ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 404 Not Found in 18ms (Views: 12.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/workers/11/another_company_list" for 127.0.0.1 at 2018-05-23 23:29:35 +0300
+Processing by Api::V1::WorkersController#another_company_list as */*
+  Parameters: {"worker_id"=>"11"}
+  [1m[36mWorker Load (0.2ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE ("companies"."id" != $1)[0m  [["id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.61ms)
+Completed 200 OK in 16ms (Views: 6.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/companies/3/workers/all" for 127.0.0.1 at 2018-05-23 23:37:06 +0300
+Processing by Api::V1::WorkersController#all as */*
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWorker Load (0.3ms)[0m  [1m[34mSELECT "workers".* FROM "workers" WHERE "workers"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.79ms)
+Completed 200 OK in 16ms (Views: 7.4ms | ActiveRecord: 0.5ms)
+
+

@@ -1,25 +1,24 @@
 module Api
   module V1
     class WorkersController < ApplicationController
+      before_action :worker, only: [:show, :update, :destroy]
+      before_action :workers, only: [:create, :all]
+
       def show
-        worker
         render json: @worker
       end
 
       def create
-        workers
         @worker = @workers.create(workers_param)
         render json: @worker
       end
 
       def update
-        worker
         @worker.update(workers_param)
         render json: @worker
       end
 
       def destroy
-        worker
         @worker.destroy
       end
 
@@ -37,7 +36,6 @@ module Api
       end
 
       def all
-        workers
         @company_workers = @workers.all
         render json: @company_workers
       end

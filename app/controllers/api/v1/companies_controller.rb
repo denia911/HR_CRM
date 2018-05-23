@@ -1,18 +1,18 @@
 module Api
   module V1
     class CompaniesController < ApplicationController
+      before_action :company_find, only: [:show, :edit, :update, :destroy]
+
       def index
         @companies = Company.all
         render json: @companies
       end
 
       def show
-        @company = Company.find(params[:id])
         render json: @company
       end
 
       def edit
-        @company = Company.find(params[:id])
         render json: @company
       end
 
@@ -22,8 +22,6 @@ module Api
       end
 
       def update
-        @company = Company.find(params[:id])
-
         if @company.update(company_params)
           render json: @company
         else
@@ -32,11 +30,14 @@ module Api
       end
 
       def destroy
-        @company = Company.find(params[:id])
         @company.destroy
       end
 
       private
+
+      def company_find
+        @company = Company.find(params[:id])
+      end
 
       def company_params
         params.permit(:name, :description)
